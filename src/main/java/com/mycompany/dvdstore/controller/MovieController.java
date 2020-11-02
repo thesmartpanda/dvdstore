@@ -1,13 +1,13 @@
 package com.mycompany.dvdstore.controller;
 
 import com.mycompany.dvdstore.model.Movie;
-import com.mycompany.dvdstore.service.MovieService;
+import com.mycompany.dvdstore.service.IMovieService;
 
 import java.util.Scanner;
 
 public class MovieController {
 
-    private MovieService movieService = new MovieService();
+    private IMovieService movieService;
 
     public void addUsingConsole(){
         System.out.println("Title: ");
@@ -24,4 +24,11 @@ public class MovieController {
         movieService.registerMovie(movie);
     }
 
+    public IMovieService getMovieService() {
+        return movieService;
+    }
+
+    public void setMovieService(IMovieService movieService) {
+        this.movieService = movieService;
+    }
 }
